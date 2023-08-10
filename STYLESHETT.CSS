@@ -1,0 +1,248 @@
+
+:root{
+    --fondo:#1f1f19;
+    --color_rosa:#b9024e;
+    --color_texto:#f8f5f5;
+
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: poppins, sans-serif;
+}
+
+
+body{
+    overflow-x: hidden;
+}
+
+.destacado{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: var(--fondo);
+}
+
+.wrapper{
+    background-color: var(--fondo);
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    padding: 40px 0 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo .logo-texto{
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--color_texto);
+
+}
+
+nav .espacios{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    background-color:#1f1f19 ;
+
+}
+
+nav .espacios span{
+    display:block;
+    background-color: var(--color_rosa);
+    margin: 5px 0px;
+    width: 100%;
+    height: 3px;
+    transition: 0.3s;
+    transition-property: transform, opacity;
+
+}
+
+nav .links{
+    list-style-type: none; /*Saca los puntos de la lista que vienen por defecto*/
+}
+
+nav .links li{
+    display: inline-block;
+}
+
+
+nav .links li a{
+    display: inline-block; /*Lps elementos se muestran en linea y no uno abajo del otro*/
+    color: #f8f5f5;
+    margin-right:40px; /*separación entre los items del header*/
+    font-weight: 500;
+
+}
+
+.contenedor{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.contenedor .foto{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 15px solid var(--color_rosa);
+    box-shadow: 5px 7px 25px rgb(0, 0, 0.5);
+}
+
+.foto img {
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.foto img:hover {
+    transform: scale(1.2);
+}
+
+.texto-cv {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-cv h5{
+    color:var(--color_texto);
+    font-size: 20px;
+}
+
+.texto-cv h5 span{
+    color: var(--color_rosa);
+}
+
+
+
+.texto-cv h1{
+    color: var(--color_rosa);
+    font-size: 3rem;
+}
+
+.texto-cv p{
+    color: #f8f5f5;
+}
+
+.botones{
+    margin: 45px 0;
+}
+
+.botones .boton {
+    border-color: var(--color_rosa);
+    color: #fff;
+    background-color: #333;
+    padding: 12px 25px;
+    margin: 5px 0px;
+    margin-right: 7px;
+    border-radius: 30px;
+    border: 2px solid #e5e5e5;
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.78);
+    transition: 0.3s; /* Agrega una transición suave */
+}
+
+.botones .boton:hover {
+    border-color: var(--color_rosa); /* Cambia el color del borde */
+    color: var(--color_texto); /* Cambia el color del texto */
+    background-color: var(--color_rosa); /* Cambia el color de fondo */
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.5); /* Cambia la sombra */
+}
+
+
+
+/*RESPONSIVE*/
+
+@media (max-width:930px){
+    nav.espacios{
+        display: initial;
+    }
+
+    .click{
+        top: 45px;
+    }
+
+    .click span{
+        position:absolute;
+        margin-top: 12px;
+    }
+
+    .click span:first-child{
+        transform: rotate(-45deg);
+    }
+
+    .click span:nth-child(2){
+        opacity:0 ;
+        margin: 0;
+
+    }
+
+    .click span:last-child{
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    nav .links{
+        position: absolute;
+        top:110px;
+        right: -100%;
+        bottom: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #333;
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0,0,0,0.1);
+        transition: 0.5s;
+        padding: 25px 0px;
+
+    }
+
+    nav .links li{
+        display: block;
+    }
+
+    nav .links li a {
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    nav .links.open{
+        right: 0;
+    }
+}
+
+@media (max-width:768px){
+    .contenedor{
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    .texto-cv{
+        padding:48px 0px;
+
+
+    }
+}
